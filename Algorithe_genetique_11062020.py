@@ -23,7 +23,7 @@ from numpy import concatenate
 from tqdm import tqdm
 
 
-class AG() :
+class AG:
     ###---------------------------------------------------------------------###
     ###--------------------------------Initialisation des paramétres-------------------------###
     def __init__(self, nombre_individus, nombre_generation, probabilite_mutation, probabilite_croisement, data, capacity):
@@ -142,10 +142,7 @@ class AG() :
             list_individus.append(ind)
             self.population_initiale[x][-1] = self.get_individual_fitness(ind, self.individue(data_random)[1])
             list_evaluations.append(self.get_individual_fitness(ind, self.individue(data_random)[1]))
-        print(list_individus)
-        print(list_evaluations)
         result = list(zip(list_individus, list_evaluations))
-        print(max(result, key=lambda x: x[1]))
 
         return self.population_initiale
 
